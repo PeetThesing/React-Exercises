@@ -51,6 +51,14 @@ export default function App({ Component, pageProps }) {
 
   console.log("insanity check");
 
+  function howManyLightsOn() {
+    let count = 0;
+    lights.map((light) => {
+      light.isOn ? count++ : null;
+    });
+    return count;
+  }
+
   function handleToggle(lightsId) {
     setLights(
       lights.map((light) => {
@@ -59,6 +67,8 @@ export default function App({ Component, pageProps }) {
             ...light,
             isOn: !light.isOn,
           };
+        } else {
+          return light;
         }
       })
     );
@@ -67,7 +77,12 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <GlobalStyle />
-      <Component {...pageProps} lights={lights} onToggle={handleToggle} />
+      <Component
+        {...pageProps}
+        lights={lights}
+        onToggle={handleToggle}
+        howManyLightsOn={howManyLightsOn}
+      />
     </Layout>
   );
 }

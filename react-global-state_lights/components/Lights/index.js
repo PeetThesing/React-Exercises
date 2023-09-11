@@ -16,7 +16,6 @@ export default function Lights({ lights, onToggle }) {
   return (
     <StyledLights>
       {lights.map((light) => {
-        console.log(light, "lich");
         return (
           <li key={light.id}>
             <Light light={light} onToggle={onToggle} />
