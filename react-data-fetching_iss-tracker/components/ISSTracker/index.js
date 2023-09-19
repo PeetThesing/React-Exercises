@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Controls from "../Controls/index";
 import Map from "../Map/index";
-import { SWRConfig, useSWRConfig } from "swr";
+// import { SWRConfig, useSWRConfig } from "swr";
 import useSWR from "swr";
 
 const URL = "https://api.wheretheiss.at/v1/satellites/25544";
